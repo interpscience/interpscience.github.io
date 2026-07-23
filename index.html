@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interpretability as a Science · Workshop</title>
+  <meta name="description" content="What can interpretability learn from other sciences? A NeurIPS 2026 workshop toward rigorous foundations for understanding LLMs." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="static/styles.css?v=4" />
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <div class="header-inner">
+      <a class="wordmark" href=".">Interp<span>Science</span></a>
+      <nav class="nav" aria-label="Primary">
+        <a href=".">Home</a>
+        <a href="program">Program</a>
+        <a class="nav-cta" href="cfp">Call for Papers</a>
+      </nav>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" data-nav-toggle>
+        <span class="sr-only">Menu</span>
+        <span></span><span></span>
+      </button>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" data-mobile-nav hidden>
+      <a href=".">Home</a>
+      <a href="program">Program</a>
+      <a href="cfp">Call for Papers</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-visual" aria-hidden="true">
+        <svg class="hero-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#e8ecf4" />
+              <stop offset="45%" stop-color="#d4dced" />
+              <stop offset="100%" stop-color="#b8c4dc" />
+            </linearGradient>
+            <radialGradient id="glow" cx="70%" cy="35%" r="45%">
+              <stop offset="0%" stop-color="#f7f8fb" stop-opacity="0.95" />
+              <stop offset="100%" stop-color="#f7f8fb" stop-opacity="0" />
+            </radialGradient>
+          </defs>
+          <rect width="1440" height="900" fill="url(#sky)" />
+          <rect width="1440" height="900" fill="url(#glow)" />
+
+          <!-- Star-map figures in the original hero band (≈ y 180–620) -->
+          <g class="constellation" fill="none" stroke="#2a3550" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Left: W / Cassiopeia-like -->
+            <g class="figure">
+              <path class="line" d="M160 420 L250 560 L360 320 L470 540 L580 300" />
+              <path class="line" d="M360 320 L320 200" />
+            </g>
+            <!-- Center: shoulders, belt, feet, sword -->
+            <g class="figure">
+              <path class="line" d="M640 240 L720 400 L790 415 L860 395 L920 220" />
+              <path class="line" d="M640 240 L920 220" />
+              <path class="line" d="M720 400 L680 580" />
+              <path class="line" d="M860 395 L920 560" />
+              <path class="line" d="M790 415 L790 490" />
+            </g>
+            <!-- Right: diamond + branching tail -->
+            <g class="figure">
+              <path class="line" d="M1060 280 L1160 200 L1280 290 L1180 390 Z" />
+              <path class="line" d="M1180 390 L1120 520 L1220 600" />
+              <path class="line" d="M1180 390 L1300 470" />
+            </g>
+            <!-- Sparse cross-links between figures -->
+            <g class="figure faint">
+              <path class="line" d="M580 300 L640 240" />
+              <path class="line" d="M920 220 L1060 280" />
+            </g>
+          </g>
+
+          <g class="nodes" fill="#1e3a8a">
+            <!-- Left figure (along draw order) -->
+            <circle class="node" cx="160" cy="420" r="5" />
+            <circle class="node" cx="250" cy="560" r="6" />
+            <circle class="node bright" cx="360" cy="320" r="8" />
+            <circle class="node" cx="470" cy="540" r="5" />
+            <circle class="node" cx="580" cy="300" r="6" />
+            <circle class="node" cx="320" cy="200" r="4" />
+            <!-- Center figure (along draw order) -->
+            <circle class="node" cx="640" cy="240" r="6" />
+            <circle class="node" cx="720" cy="400" r="6" />
+            <circle class="node bright" cx="790" cy="415" r="8" />
+            <circle class="node" cx="860" cy="395" r="6" />
+            <circle class="node bright" cx="920" cy="220" r="7" />
+            <circle class="node" cx="680" cy="580" r="5" />
+            <circle class="node" cx="920" cy="560" r="5" />
+            <circle class="node" cx="790" cy="490" r="4" />
+            <!-- Right figure (along draw order) -->
+            <circle class="node" cx="1060" cy="280" r="6" />
+            <circle class="node bright" cx="1160" cy="200" r="7" />
+            <circle class="node" cx="1280" cy="290" r="5" />
+            <circle class="node" cx="1180" cy="390" r="7" />
+            <circle class="node" cx="1120" cy="520" r="5" />
+            <circle class="node" cx="1220" cy="600" r="5" />
+            <circle class="node" cx="1300" cy="470" r="4" />
+            <!-- Unconnected field stars -->
+            <circle class="node field" cx="200" cy="220" r="3" />
+            <circle class="node field" cx="480" cy="180" r="2.5" />
+            <circle class="node field" cx="1000" cy="520" r="3" />
+            <circle class="node field" cx="1320" cy="180" r="2.5" />
+            <circle class="node field" cx="400" cy="620" r="3" />
+          </g>
+        </svg>
+      </div>
+
+      <div class="hero-content">
+        <p class="hero-venue">NeurIPS 2026 · Sydney</p>
+        <h1 id="hero-title">Interpretability as a Science</h1>
+        <p class="hero-lede">Toward rigorous foundations for understanding LLMs</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="cfp">Call for Papers</a>
+          <a class="btn btn-ghost" href="#about">Learn more</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about" data-reveal>
+      <div class="section-inner">
+        <h2>About</h2>
+        <p>
+          As large language models grow in capability, interpretability asks how and why they behave as they do.
+          Yet the field has not converged on notions of explanations at varying levels of abstraction, what evidence supports a claim, 
+          or how to design experiments that rule out alternative explanations. 
+          This workshop asks what it would take to ground interpretability
+          as a rigorous empirical science—drawing lessons from disciplines that have long studied complex systems.
+        </p>
+        <p>We focus on the following questions:</p>
+        <p>
+        <ul class="focus-list">
+          <li>What does it mean to understand an LLM?</li>
+           <li>What standards, benchmarks, or evaluation criteria the field could adopt for measurement, causal claims, and falsifiability?</li>
+          <li>What can interpretability learn from neuroscience, statistics, and causal representation learning?</li>
+        </ul>
+      </p>
+        <p>A distinctive feature of this workshop is its interactive format. The workshop will host
+          multiple breakout sessions, each led by a facilitator from a relevant discipline, who will
+          give a short lightning talk highlighting important questions related to a specific sub-theme, 
+          then moderate a discussion connecting these ideas to interpretability. This format is designed to encourage genuine dialogue and engagement, 
+          inviting attendees to collectively shape a shared scientific foundation for interpretability.
+        </p> 
+      </div>
+    </section>
+
+    <section class="section speakers" id="speakers" data-reveal>
+      <div class="section-inner">
+        <h2>Invited Speakers</h2>
+        The list of invited speakers will be announced soon!
+      </div>
+    </section>
+
+    <section class="section organizers" id="organizers" data-reveal>
+      <div class="section-inner">
+        <h2>Organizers</h2>
+        <ul class="person-grid">
+          <li>
+            <img src="static/images/people/dhanya-sridhar.jpeg" alt="" width="160" height="160" />
+            <h3>Dhanya Sridhar</h3>
+            <p>Université de Montréal &amp; Mila</p>
+          </li>
+          <li>
+            <img src="static/images/people/navita-goyal.jpg" alt="" width="160" height="160" />
+            <h3>Navita Goyal</h3>
+            <p>University of Maryland</p>
+          </li>
+          <li>
+            <img src="static/images/people/patrik-reizinger.png" alt="" width="160" height="160" />
+            <h3>Patrik Reizinger</h3>
+            <p>University of Tübingen</p>
+          </li>
+          <li>
+            <img src="static/images/people/gemma-moran.jpg" alt="" width="160" height="160" />
+            <h3>Gemma Moran</h3>
+            <p>Rutgers University</p>
+          </li>
+          <li>
+            <img src="static/images/people/david-klindt.jpg" alt="" width="160" height="160" />
+            <h3>David Klindt</h3>
+            <p>Cold Spring Harbor Laboratory</p>
+          </li>
+          <li>
+            <img src="static/images/people/shruti-joshi.jpg" alt="" width="160" height="160" />
+            <h3>Shruti Joshi</h3>
+            <p>Mila &amp; Université de Montréal</p>
+          </li>
+          <li>
+            <img src="static/images/people/hal-daume.jpg" alt="" width="160" height="160" />
+            <h3>Hal Daumé III</h3>
+            <p>University of Maryland</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-brand">Interpretability as a Science</p>
+      <p>NeurIPS 2026 Workshop · Sydney</p>
+    </div>
+  </footer>
+
+  <script src="static/script.js?v=5"></script>
+</body>
+</html>
