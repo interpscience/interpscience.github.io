@@ -446,6 +446,11 @@ a:hover {
   background: var(--paper);
 }
 
+.organizers a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .person-grid {
   list-style: none;
   margin: 0;
@@ -639,12 +644,31 @@ a:hover {
   background: var(--accent);
 }
 
+.submission-guidelines li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.cfp-header {
+  padding: 0 0 1.75rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
 .note {
   /* margin-top: 1.5rem; */
-  padding: 1rem 0;
-  border-top: 1px solid var(--line);
+  padding: 0.5rem 0;
+  /* border-top: 1px solid var(--line); */
   font-size: 0.98rem;
   color: var(--muted);
+}
+
+.note-end {
+  /* margin-top: 1.5rem; */
+  padding: 0.5rem 0;
+  /* border-top: 1px solid var(--line); */
+  font-size: 0.98rem;
+  /* color: var(--muted); */
+  font-weight: 500;
+  color: var(--ink);
 }
 
 /* Schedule table */
@@ -742,6 +766,21 @@ a:hover {
   max-width: 72rem;
   margin: 0 auto;
   padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-left,
+.footer-right {
+  min-width: 0;
+}
+
+.footer-right {
+  margin-left: auto;
+  text-align: right;
 }
 
 .footer-brand {
@@ -749,6 +788,30 @@ a:hover {
   font-family: var(--font-display);
   font-size: 1.1rem;
   color: #eef1f7;
+}
+
+.footer-contact-label {
+  margin: 0 0 0.2rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #eef1f7;
+}
+
+.footer-contact {
+  margin: 0;
+  font-size: 0.92rem;
+  color: #9aa3b5;
+}
+
+.footer-contact a {
+  color: #9aa3b5;
+  text-decoration: none;
+}
+
+.site-footer p {
+  margin: 0 0 0.35rem;
 }
 
 .site-footer p:last-child {
