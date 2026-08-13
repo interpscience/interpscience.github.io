@@ -29,10 +29,9 @@ remains free to publish elsewhere afterward.
 ## Does the workshop accept position papers or conceptual/perspective papers?
 
 Yes — position and conceptual perspective papers are welcome, on both the
-short and long paper tracks. (Note: as of this writing the CfP's submission
-guidelines still describe submissions as "outlining new research" and don't
-mention position papers explicitly; the organizers said they'd clarify this
-in the call but the page text hasn't caught up yet.)
+short and long paper tracks. The submission guidelines on the Call for Papers
+describe submissions as "outlining new research"; position and perspective
+papers are in scope nonetheless.
 
 ## Is work on architectures other than LLMs (e.g., RNNs, state space models) in scope?
 
