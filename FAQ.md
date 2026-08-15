@@ -31,9 +31,9 @@ discretion, so the main text has to carry the paper on its own.
 
 ## Does the workshop accept position papers or conceptual/perspective papers?
 
-Yes, on both the short and long tracks. Our submission guidelines describe
-submissions as "outlining new research"; position and conceptual perspective
-papers are in scope nonetheless.
+Yes, on both the short and long tracks. Our submission guidelines invite papers
+that report new research or argue a position, and conceptual and perspective
+papers fall under the second.
 
 ## Is work on architectures other than LLMs (e.g., RNNs, state space models) in scope?
 
