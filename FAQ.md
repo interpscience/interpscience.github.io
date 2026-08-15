@@ -47,6 +47,4 @@ We cannot promise a remote slot. NeurIPS allows workshops only a very limited
 remote component, reserved for unforeseen emergencies, so we plan the poster
 session as in-person and will accommodate what the guidelines and our technical
 setup allow. A co-author or colleague attending NeurIPS may present the poster
-in your place. Submit either way: we announce accepted papers and return reviews
-regardless of who presents, and the workshop is non-archival, so the work stays
-free to publish elsewhere.
+in your place.
