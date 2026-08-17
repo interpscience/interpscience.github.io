@@ -9,15 +9,15 @@ September 3 to 17, 2026, and we assign each reviewer 2-3 papers.
 
 ## How do I request a reciprocal-reviewer exception?
 
-Every submission needs at least one author signed up as a reciprocal
-reviewer. If no author qualifies, the submission form includes an option to
-request an exception, along with a short statement of why. We review these
-on a case-by-case basis and reply as soon as possible.
+Every submission needs at least one author signed up as a reciprocal reviewer.
+If no author qualifies, the submission form includes an option to request an
+exception, along with a short statement of why. We review these on a
+case-by-case basis and reply as soon as possible. 
 
 ## When will the paper submission portal (OpenReview) open?
 
 The submission portal is now live on OpenReview. You can submit your paper
-[here](https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/InterpScience). 
+[here](https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/InterpScience&referrer=%5BHomepage%5D(%2F)#tab-recent-activity). 
 
 ## Do references and appendices count toward the page limit?
 
