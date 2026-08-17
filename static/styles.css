@@ -451,6 +451,11 @@ a:hover {
   color: inherit;
 }
 
+.speakers a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .person-grid {
   list-style: none;
   margin: 0;
