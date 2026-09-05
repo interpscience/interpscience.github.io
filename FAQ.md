@@ -2,10 +2,11 @@
 
 ## How do I volunteer as a reviewer or join the program committee?
 
-Sign up through our [program committee interest
+Reviewing sign-ups are now closed. 
+~~Sign up through our [program committee interest
 form](https://forms.gle/DCUMr9WMWwn3pN6FA), also linked on the [Call for
 Papers](https://interpscience.github.io/cfp). Reviewing runs tentatively from
-September 3 to 17, 2026, and we assign each reviewer 2-3 papers.
+September 3 to 17, 2026, and we aim to assign each reviewer 2-3 papers.~~
 
 ## How do I request a reciprocal-reviewer exception?
 
@@ -24,8 +25,7 @@ The submission portal is now live on OpenReview. You can submit your paper
 No. The 5-page and 9-page limits cover the main text, figures and tables
 included; references and an optional appendix go beyond them, following the
 [NeurIPS](https://neurips.cc/Conferences/2026/MainTrackHandbook) and
-[ICLR](https://iclr.cc/Conferences/2026/AuthorGuide) conventions that the two
-templates we accept already carry. Reviewers read the appendix at their
+[ICLR](https://iclr.cc/Conferences/2026/AuthorGuide) conventions. Reviewers read the appendix at their
 discretion, so the main text has to carry the paper on its own.
 
 ## Does the workshop accept position papers or conceptual/perspective papers?
