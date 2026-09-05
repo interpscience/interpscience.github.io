@@ -103,15 +103,17 @@
         return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
       }
 
-      // The small inline subset the FAQ actually uses: [label](url) and bare
-      // URLs. The trailing character class keeps sentence punctuation out of
-      // the href so "see https://example.com/x." does not break the link.
+      // The small inline subset the FAQ actually uses: [label](url), bare
+      // URLs, and ~~strikethrough~~. The trailing character class keeps
+      // sentence punctuation out of the href so "see https://example.com/x."
+      // does not break the link.
       function inline(md) {
         var out = escapeHtml(md);
         out = out.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g,
           function (_, label, url) { return '<a href="' + url + '">' + label + '</a>'; });
         out = out.replace(/(^|[\s(])(https?:\/\/[^\s<)]*[^\s<).,;:])/g,
           function (_, pre, url) { return pre + '<a href="' + url + '">' + url + '</a>'; });
+        out = out.replace(/~~([^~]+)~~/g, '<del>$1</del>');
         return out;
       }
 
