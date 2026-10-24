@@ -47,3 +47,9 @@ remote component, reserved for unforeseen emergencies, so we plan the poster
 session as in-person and will accommodate what the guidelines and our technical
 setup allow. A co-author or colleague attending NeurIPS may present the poster
 in your place.
+
+## Is review double-blind? Do I need to anonymize my PDF and any linked code or demos?
+
+Yes. Review is double-blind: please anonymize the submitted PDF, and anonymize
+or remove identifying information from any linked GitHub or Hugging Face
+repositories.
