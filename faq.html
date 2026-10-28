@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="static/styles.css" />
+  <link rel="stylesheet" href="static/styles.css?v=5" />
   <link rel="icon" href="static/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="static/favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="icon" href="static/favicon-192.png" sizes="192x192" type="image/png" />
@@ -24,6 +24,7 @@
         <a href=".">Home</a>
         <a href="program">Program</a>
         <a href="faq" aria-current="page">FAQ</a>
+        <a href="faq#attending-and-presenting">Attending</a>
         <a class="nav-cta" href="cfp">Call for Papers</a>
       </nav>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" data-nav-toggle>
@@ -35,6 +36,7 @@
       <a href=".">Home</a>
       <a href="program">Program</a>
       <a href="faq">FAQ</a>
+      <a href="faq#attending-and-presenting">Attending</a>
       <a href="cfp">Call for Papers</a>
     </nav>
   </header>
@@ -57,6 +59,12 @@
           The questions and answers live in FAQ.md and nowhere else. This page
           fetches that file and renders it, so there is exactly one place to edit.
           Do not paste answers into this file.
+
+          Heading scheme in FAQ.md: "# " is the document title (dropped here),
+          "## " opens a section (Reviewing, Submissions, ...) and "### " is one
+          question. Both sections and questions get an id derived from their
+          wording, so a link such as faq#attending-and-presenting keeps working
+          when entries are added or reordered.
         -->
         <div id="faq-content">
           <p class="note">Loading the FAQ…</p>
@@ -119,29 +127,53 @@
 
       function render(md) {
         var lines = md.split(/\r?\n/);
-        var entries = [], question = null, buf = [];
+        // entries: {kind: 'section'|'question', text, buf}
+        var entries = [], cur = null;
+        function open(kind, text) {
+          if (cur !== null) entries.push(cur);
+          cur = { kind: kind, text: text, buf: [] };
+        }
         lines.forEach(function (ln) {
-          if (ln.indexOf('## ') === 0) {
-            if (question !== null) entries.push([question, buf]);
-            question = ln.slice(3).trim();
-            buf = [];
+          if (ln.indexOf('### ') === 0) {
+            open('question', ln.slice(4).trim());
+          } else if (ln.indexOf('## ') === 0) {
+            open('section', ln.slice(3).trim());
           } else if (ln.indexOf('# ') === 0) {
             // the document title is already in the page hero
-          } else if (question !== null) {
-            buf.push(ln);
+          } else if (cur !== null) {
+            cur.buf.push(ln);
           }
         });
-        if (question !== null) entries.push([question, buf]);
+        if (cur !== null) entries.push(cur);
 
-        if (!entries.length) throw new Error('no "## question" headings found');
+        var questions = entries.filter(function (e) { return e.kind === 'question'; });
+        if (!questions.length) throw new Error('no "### question" headings found');
 
-        var html = '', seen = {};
-        entries.forEach(function (e) {
-          var q = e[0], base = slugify(q), slug = base, n = 2;
+        var seen = {};
+        function uniqueSlug(text) {
+          var base = slugify(text), slug = base, n = 2;
           while (seen[slug]) { slug = base + '-' + n; n++; }
           seen[slug] = true;
-          html += '<h2 id="' + slug + '">' + inline(q) + '</h2>';
-          e[1].join('\n').split(/\n\s*\n/).forEach(function (p) {
+          return slug;
+        }
+        entries.forEach(function (e) { e.slug = uniqueSlug(e.text); });
+
+        var sections = entries.filter(function (e) { return e.kind === 'section'; });
+        var html = '';
+        if (sections.length > 1) {
+          html += '<nav class="faq-jump" aria-label="FAQ sections"><span>Jump to</span>';
+          sections.forEach(function (s) {
+            html += '<a href="#' + s.slug + '">' + inline(s.text) + '</a>';
+          });
+          html += '</nav>';
+        }
+        entries.forEach(function (e) {
+          if (e.kind === 'section') {
+            html += '<h2 class="faq-section" id="' + e.slug + '">' + inline(e.text) + '</h2>';
+          } else {
+            html += '<h3 id="' + e.slug + '">' + inline(e.text) + '</h3>';
+          }
+          e.buf.join('\n').split(/\n\s*\n/).forEach(function (p) {
             if (p.trim()) html += '<p>' + inline(p.trim().split(/\s+/).join(' ')) + '</p>';
           });
         });
