@@ -48,8 +48,7 @@ call even though its framing mentions LLMs.
 
 ### Do I need to register to present my paper?
 
-Yes. Someone has to present each paper at the workshop, and that person needs a
-pass. The type of pass depends on how they attend.
+Yes. For someone to present a paper at the workshop, that person needs a pass. The type of pass depends on how they attend.
 
 ### What pass do I need to attend in person?
 
