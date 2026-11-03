@@ -451,6 +451,38 @@ a:hover {
   color: inherit;
 }
 
+.about h2,
+.speakers h2,
+.organizers h2 {
+  text-align: center;
+}
+
+.speakers h2,
+.organizers h2,
+.sponsors h2 {
+  margin-bottom: 2.5rem;
+}
+
+.sponsors {
+  background: var(--paper-2);
+  text-align: center;
+}
+
+.sponsor-note {
+  color: var(--ink-soft);
+  margin: 0 0 1.25rem;
+}
+
+.sponsor-logo {
+  display: inline-block;
+}
+
+.sponsor-logo img {
+  display: block;
+  height: 82px;
+  width: auto;
+}
+
 .speakers a {
   text-decoration: none;
   color: inherit;
