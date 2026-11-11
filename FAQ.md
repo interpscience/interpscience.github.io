@@ -44,6 +44,37 @@ Yes. Our topics of interest are methodological, so interpretability work on
 recurrent neural networks, state space models, and other architectures fits the
 call even though its framing mentions LLMs.
 
+## Camera-ready
+
+### When is the camera-ready version due, and how long can it be?
+
+Upload the de-anonymized camera-ready version to OpenReview by November 15,
+2026 (AoE). You have one extra page to address the reviewers' comments: up to 6
+pages for short papers and 10 for long papers. References and the appendix do
+not count toward these limits. The camera-ready version must use the NeurIPS
+format.
+
+### Do I need to include the NeurIPS paper checklist?
+
+You can include it, and we do not require it. The checklist does not count
+toward the page limit.
+
+### Can I keep the appendix in the camera-ready PDF?
+
+Yes. Keep the appendix in the same PDF, after the references, as in the
+submission.
+
+### What can I change in the camera-ready version?
+
+Minor edits for clarity that respond to the reviews. We accepted the paper on
+the submitted work, so we cannot accept new studies, a move from the short to
+the long track, or changes to the author list.
+
+### When can I post my paper to arXiv?
+
+At any time. Accepted papers are non-archival and do not appear in proceedings,
+and we place no restriction on preprints.
+
 ## Attending and presenting
 
 ### Do I need to register to present my paper?
