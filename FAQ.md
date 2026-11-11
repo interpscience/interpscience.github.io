@@ -56,8 +56,8 @@ format.
 
 ### Do I need to include the NeurIPS paper checklist?
 
-No. The checklist is not required, at submission or at camera-ready. You can
-remove it.
+You can include it, and we do not require it. The checklist does not count
+toward the page limit.
 
 ### Can I keep the appendix in the camera-ready PDF?
 
